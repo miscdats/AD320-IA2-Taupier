@@ -5,10 +5,10 @@
     $state = $_GET['state'];
     echo("Name : " . $name . "<br>");
     echo("Email: " . $email . "<br>");
-    if (isset($phone)) {
+    if (!empty($phone)) {
         echo("Phone: " . $phone . "<br>");
     }
-    if(isset($state)) {
+    if(!empty($state)) {
         echo("State: " . $state . "<br>");
     }
  ?>
