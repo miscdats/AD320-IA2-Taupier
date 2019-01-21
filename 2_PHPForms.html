@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <title>Deyanira Taupier - PHP Forms</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.0/jquery.validate.min.js"></script>
+    <script>
+        $("#disForm").validate({
+          rules: {
+            name: "required",
+            email: {
+              required: true,
+              email: true
+            }
+          },
+          messages: {
+            name: "Please specify your name",
+            email: {
+              required: "We need your email address to contact you",
+              email: "Your email address must be in the format of name@domain.com"
+            }
+          },
+          submitHandler: function(form) {
+              console.log("Submitting this form...");
+              console.log(form);
+              form.submit();
+          }
+        });
+    </script>
+</head>
+<body>
+    <form name="disForm" action="2_PHPForms.php" method="get">
+        <label>Name :  <span>*</span></label><input type="text" name="name" placeholder="Name Chomp Sky" required><br>
+        <label>Email: <span>*</span></label><input type="text" name="email" placeholder="u@hoo.coo" required><br>
+        <label>Phone: </label><input type="tel" name="phone" placeholder="xxx-xxx-xxxx"><br>
+        <label>State: </label><input list="states" placeholder="State">
+            <datalist name="states">
+                <option value="Alabama">
+                <option value="Alaska">
+                <option value="Arizona">
+                <option value="Arkansas">
+                <option value="California">
+                <option value="Colorado">
+                <option value="Connecticut">
+                <option value="Delaware">
+                <option value="Florida">
+                <option value="Georgia">
+                <option value="Hawaii">
+                <option value="Idaho">
+                <option value="Illinois">
+                <option value="Indiana">
+                <option value="Iowa">
+                <option value="Kansas">
+                <option value="Kentucky">
+                <option value="Louisiana">
+                <option value="Maine">
+                <option value="Maryland">
+                <option value="Massachusetts">
+                <option value="Michigan">
+                <option value="Minnesota">
+                <option value="Mississippi">
+                <option value="Missouri">
+                <option value="Montana">
+                <option value="Nebraska">
+                <option value="Nevada">
+                <option value="New Hampshire">
+                <option value="New Jersey">
+                <option value="New Mexico">
+                <option value="New York">
+                <option value="North Carolina">
+                <option value="North Dakota">
+                <option value="Ohio">
+                <option value="Oklahoma">
+                <option value="Oregon">
+                <option value="Pennsylvania">
+                <option value="Rhode Island">
+                <option value="South Carolina">
+                <option value="South Dakota">
+                <option value="Tennessee">
+                <option value="Texas">
+                <option value="Utah">
+                <option value="Vermont">
+                <option value="Virginia">
+                <option value="Washington">
+                <option value="West Virginia">
+                <option value="Wisconsin">
+                <option value="Wyoming">
+            </datalist>
+        <br>
+        <input type="submit" value="Submit to me~">
+    </form>
+    <br>
+    * denotes required field.
+</body>
+</html>
