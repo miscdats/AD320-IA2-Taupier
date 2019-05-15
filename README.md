@@ -1,2 +1,2 @@
-# AD320-IA2-Taupier
+# Easy PHP form for beginners to understand!
 PHP form fun.
